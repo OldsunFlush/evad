@@ -1,0 +1,1412 @@
+/* FONTS */
+
+@font-face {
+    font-family: 'icomoon';
+    src:url('../fonts/icomoon.eot?-7wqv3q');
+    src:url('../fonts/icomoon.eot?#iefix-7wqv3q') format('embedded-opentype'),
+        url('../fonts/icomoon.woff?-7wqv3q') format('woff'),
+        url('../fonts/icomoon.ttf?-7wqv3q') format('truetype'),
+        url('../fonts/icomoon.svg?-7wqv3q#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-icon_next:before {
+    content: "\e600";
+}
+.icon-icon_pause:before {
+    content: "\e601";
+}
+.icon-icon_play:before {
+    content: "\e602";
+}
+.icon-icon_prev:before {
+    content: "\e603";
+}
+.icon-icon_agenda35:before {
+    content: "\e604";
+    font-size:35px;
+}
+.icon-icon_cd35:before {
+    content: "\e605";
+    font-size:35px;
+}
+.icon-icon_contact35:before {
+    content: "\e606";
+    font-size:35px;
+}
+.icon-icon_down35:before {
+    content: "\e607";
+    font-size:35px;
+    color:@black;
+}
+.icon-icon_fb35:before {
+    content: "\e608";
+    font-size:35px;
+}
+.icon-icon_mail35:before {
+    content: "\e609";
+    font-size:35px;
+}
+.icon-icon_recrut35:before {
+    content: "\e60a";
+    font-size:35px;
+}
+.icon-icon_soundcloud35:before {
+    content: "\e60b";
+    font-size:35px;
+}
+.icon-icon_twitter35:before {
+    content: "\e60c";
+    font-size:35px;
+}
+
+
+    /* ------------ VARIABLES ------------ */
+
+
+@red: #b12b06;
+@darkRed: #a72705;
+@darkRed2: #831304;
+@grey: #ececec;
+@darkGrey: #b0b0b0;
+@white: #fff;
+@black: #000;
+@lightBlack: #515151;
+
+@fb :#3b5998;
+@twitter :#00aced;
+@soundcloud :#ff3a00;
+
+.background-cover{
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -ms-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+}
+
+.transition{
+    -webkit-transition:all .2s;
+    -moz-transition:all .2s;   
+    -ms-transition:all .2s;   
+    -o-transition:all .2s;   
+    transition:all .2s;   
+}
+
+.border-box{
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+.border-radius(@radius: 2px){
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -ms-border-radius: @radius;
+    -o-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.appearance{
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    -o-appearance:none;
+    appearance:none;
+}
+
+
+/* --------------------------------------------- */
+
+
+body{
+    width:100%;
+    height:100%;
+    font-family:'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size:15px;
+    overflow-x:hidden;
+    background-color:@grey;
+}
+
+.italic{
+    font-family:'Open sans', sans-serif;
+    font-weight: 400italic;
+}
+
+.red{
+    color:@red;   
+}
+
+.semibold{
+    font-weight:600;
+}
+
+    /* BACKGROUND */
+    
+#background-bg{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%; 
+    height:100%;
+    background-image:url('../img/background.jpg');
+    z-index:-1000;
+    .background-cover;
+}
+
+    /* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 60px;
+    background-color:rgba(0, 0, 0, 0.8);
+    color:#c9c9c9;
+    z-index:1000;
+}
+
+.logo{
+    margin-right:45px;
+    margin-left:55px;
+    margin-top:13px;
+    float:left;
+    .transition;
+    //opacity:0.8;
+
+    /*&:hover{
+        opacity:1;
+    }*/
+}
+
+nav#menu > ul{
+    display: block;
+}
+
+nav#menu > ul > li{
+    float:left;
+    height:60px;
+    padding-left:10px;
+    padding-right:12px;
+    padding-top:21px;
+    list-style:none;
+    position:relative;
+    border-left:2px solid transparent;
+    z-index:1000;
+    .border-box;
+    
+    &:hover{
+        border-left:2px solid @red;
+    }
+    
+    &:last-child{
+        padding-top:-21px;
+    }
+}
+
+nav#menu > ul > li{
+    color:@grey;
+    font-weight:600;
+    text-decoration:none;
+    font-size:15px;
+    
+    &:hover{
+        color:@white;
+        cursor:pointer;
+    }
+}
+
+nav#menu > ul > li > a{
+    color:#fff;
+    text-decoration:none;
+}
+
+.submenu{
+    display: none;
+    background-color:@white;
+    margin-top:24px;
+}
+
+nav#menu > ul > li:hover > .submenu{
+    display: block;
+    position:absolute;
+    width:120%;
+}
+
+nav#menu > ul > li > ul{
+    margin-left:-12px;
+}
+
+nav#menu > ul > li > ul > li{
+    height:40px;
+    border-left:2px solid @red;
+    
+    &:after{
+        content:'';
+        display: block;
+        width:99%;
+        border-bottom:1px solid @grey;
+        margin-left:1px;
+    }
+    &:last-child{
+        border-bottom: none;
+    }
+}
+
+nav#menu > ul > li > ul.submenu > li > a{
+    color: @black;
+    font-weight:400;
+    font-size: 15px;
+    line-height: 40px;
+    padding-left:11px;
+    text-decoration: none;
+    
+    &:hover{
+        color:@red;
+    }
+}
+
+div.lectAudio{
+    position:absolute;
+    float:right;
+    right:80px;
+    top:16px;
+    width:260px;
+    overflow: hidden;
+    background-color:transparent
+}
+
+#hamburger{
+    background-image:url('../img/hamburger-icon.png');
+    display: none;
+    width:24px;
+    height:24px;
+    float:right;
+    position:absolute;
+    top:19px;
+    right:45px;
+    opacity:0.8;
+    
+    &:hover{
+        opacity:1;
+    }
+}
+
+#bandeau{
+    background-image:url('../img/texture.png');
+    width:960px;
+    height:50px;
+    padding:0 2%;
+    margin:auto;
+    text-align: center;
+    background-color: fade(@black, 30%);
+    color:@white;
+    line-height: 50px;
+    font-size:18px;
+    font-weight:600;
+    margin-top:33%;
+    z-index:999;
+    .border-box;
+}
+
+    /* MAIN */
+
+main{
+    position:relative;
+    width:960px;
+    height:auto;
+    margin:auto;
+    margin-bottom:4%;
+    padding:30px 70px;
+    background-color:@white;
+    z-index:999;
+    .border-box;
+}
+
+main p:first-child{
+    text-align:center;
+    line-height:24px;
+    margin:auto;
+}
+
+a#button-scroll{
+    position:absolute;
+    text-align: center;
+    left:48%;
+    top:18%;
+    margin:auto;
+    width:35px;
+    text-decoration:none;
+}
+
+article#links{
+    width:820px;
+    margin:auto;
+    margin-top:18%;
+    padding-bottom:60px;
+}
+
+article section{
+    width:250px;
+    height:315px;
+    text-align: center;
+    margin-bottom:38px;
+}
+
+article section h2{
+    font-weight:600;
+    font-size:20px;
+    color:@red;
+    text-align: center;
+    margin-bottom:30px;
+}
+
+article section p{
+    font-size: 13px;
+    font-weight:400;
+    text-align:left;
+    line-height:16px;
+    height:auto;
+}
+
+article section li.infos p:first-child{
+    width:50px;   
+}
+
+li.infos{
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+li.infos:nth-of-type(2){
+    margin: 0 28px;
+}
+
+li.infos h2{
+    line-height:35px;
+}
+
+li.infos img{
+    padding:6px;
+    border:1px solid @grey;
+}
+
+li.infos > section > ul > li > section{
+    padding:20px 14px;
+    border:1px solid @lightBlack;
+    background-color: @grey;
+    .border-radius;
+    text-align:left;
+    height:110px;
+    font-size:13px;
+    margin-bottom:16px;
+    .border-box;
+}
+
+li.infos > section > ul > li > section h3{
+    font-size:15px;
+    font-weight:600;
+}
+
+li.infos section > section{
+    border:1px solid @lightBlack;
+    background-color: @grey;
+    .border-radius;
+    margin-bottom:35px;
+    height:auto;
+}
+
+li.infos:nth-of-type(1) h3{
+    text-align: left;
+    font-size: 15px;
+    font-weight:600;
+    padding-top:20px;
+    padding-bottom:10px;
+    padding-left:14px;
+}
+
+li.infos:nth-of-type(1) p{
+    padding:10px 14px;
+    margin-bottom:16px;
+    line-height:16px;
+    width:100%;
+    text-align: left;
+    .border-box;
+}
+
+li.infos .main-button{
+    background-color:@red;
+    color:@white;
+    font-size:16px;
+    padding:6px 10px;
+    text-decoration:none;
+    box-shadow:0 5px 0 0 @darkRed; 
+    bottom:0;
+
+    &:hover{
+        background-color:@darkRed;
+        box-shadow:0 5px 0 0 @darkRed2;
+        .transition;
+    }
+}
+
+li.infos .small-button{
+    background-color:@red;
+    color:@white;
+    font-size:13px;
+    padding:6px 10px;
+    margin-top:5px;
+    margin-right:18px;
+    text-decoration:none;
+    float:right;
+    
+    &:hover{
+        background-color:@darkRed;
+        box-shadow:0 3px 0 0 @darkRed2;   
+        .transition;
+    }
+}
+
+/* ---------- ENSEMBLE VOCAL, LES SOLISTES, DIRECTION ARTISTIQUE ---------- */
+
+main#presentation,
+main#programme,
+main#medias,
+main#soutiens,
+main#contact{
+    margin-top:33%;
+}
+
+main#presentation p:first-child{
+    line-height:16px;
+}
+
+main#presentation > h2,
+main#programme > h2,
+main#medias > h2,
+main#soutiens > h2,
+main#contact > h2{
+    font-weight:600;
+    font-size:20px;
+    color:@red;
+    text-align: left;
+    margin-top:30px;
+    margin-bottom:45px;
+}
+
+section.presentation-content{
+    margin-bottom:75px;
+    height:auto;
+}
+
+section.presentation-content:nth-of-type(odd) img{
+    float:left;
+    width:29%;
+    height:auto;
+}
+
+section.presentation-content:nth-of-type(odd) section{
+    width:67%;
+    margin-left:29%;
+    padding-left:35px;
+}
+
+section.presentation-content:nth-of-type(even) img{ 
+    float:right;
+    width:29%;
+    height:auto;
+}
+
+section.presentation-content:nth-of-type(even) section{
+    width:67%;
+    margin-right:29%;
+    padding-right:35px;
+}
+
+section.presentation-content section p{
+    margin-bottom:25px;
+    font-size:14px;
+    text-align: justify;
+}
+
+section.presentation-content section p:last-child{
+    margin-bottom:0;
+}
+
+section.presentation-content+p{
+    margin-bottom:60px;
+    font-size:14px;
+    text-align: justify;
+}
+
+section.presentation-content-solistes{
+    padding-bottom:60px;
+}
+
+/* ---------- PROGRAMME ---------- */
+
+/* ---------- AGENDA ---------- */
+
+/* ---------- AUDIO ---------- */
+
+/* ---------- PHOTOS ---------- */
+
+/* ---------- PRESSE ---------- */
+
+/* ---------- PARTENAIRES ---------- */
+
+/* ---------- MECENES ---------- */
+
+/* ---------- CONTACT ---------- */
+
+section.contact-content{
+    margin-top:40px;
+    margin-bottom:60px;
+    border-bottom:1px solid @grey;
+}
+
+section.contact-content section{
+    width:46%;
+    display: inline-block;
+}
+
+section.contact-content section .main-button{
+    background-color:@red;
+    color:@white;
+    font-size:16px;
+    padding:9px 0;
+    text-decoration:none;
+    text-align: center;
+    margin: auto;
+    display: block;
+    box-shadow:0 5px 0 0 @darkRed; 
+    bottom:0;
+
+    &:hover{
+        background-color:@darkRed;
+        box-shadow:0 5px 0 0 @darkRed2;
+        .transition;
+    }
+}
+
+section.contact-content section p{
+    margin-top:32px;
+    margin-bottom:60px;
+    padding:24px;
+    background-color:@grey;
+    text-align: justify;
+    font-size:13px;
+}
+
+section.contact-content section:last-child{
+    float:right;
+}
+    
+main#contact form{
+    height:472px;
+    width:100%;
+    margin-bottom:120px;
+    padding:50px;
+    background-color:@grey;
+    .border-box;
+}
+
+main#contact input[type=text]{
+    height:38px;
+    width:100%;
+    border:1px solid @darkGrey;
+    padding:0 15px;
+    .border-box;
+    .border-radius;
+}
+
+main#contact input[type=text]:nth-of-type(1),
+main#contact input[type=text]:nth-of-type(2){
+    width:48%;
+}
+
+main#contact input[type=text]:nth-of-type(2){
+    float:right;
+    margin-bottom:24px;    
+}
+
+main#contact input[type=text]:nth-of-type(3){
+    margin-bottom:24px;
+}
+
+main#contact select{
+    height:38px;
+    width:100%;
+    border:1px solid @darkGrey;
+    margin-bottom:24px;
+    padding:10px 15px;
+    color: transparent;
+    text-shadow: 0 0 #757575;
+    outline: none;
+    .border-box;
+    .border-radius;
+}
+
+main#contact textarea{
+    height:185px;
+    width:100%;
+    min-width:100%;
+    max-width:100%;
+    min-height:185px;
+    max-height:185px;
+    font-family: 'Open Sans', sans-serif;
+    font-size:11px;
+    padding:10px 15px;
+    margin-bottom:90px;
+    resize:none;
+    border:1px solid @darkGrey;
+    overflow:auto;
+    .border-box;
+    .border-radius;
+}
+
+main#contact input[type=submit]{
+    background-color:@red;
+    color:@white;
+    font-size:16px;
+    padding:7px 18px;
+    text-decoration:none;
+    text-align: center;
+    margin: auto;
+    display: block;
+    border:none;
+    box-shadow:0 5px 0 0 @darkRed; 
+    bottom:0;
+
+    &:hover{
+        background-color:@darkRed;
+        box-shadow:0 5px 0 0 @darkRed2;
+        cursor:pointer;
+        .transition;
+    }
+}
+
+main#contact > section:nth-of-type(2){
+    height:160px;
+    width:100%;
+    border-top:1px solid @grey;
+}
+
+main#contact > section:nth-of-type(2) ul li{
+    float:left;
+    margin-top:30px;
+    .border-box;
+}
+
+main#contact > section:nth-of-type(2) ul li:first-child{
+    margin-left:30px;
+}
+
+main#contact > section:nth-of-type(2) ul li:nth-of-type(2){
+    margin-left:15%;
+    margin-right:15%;
+}
+
+main#contact > section:nth-of-type(2) ul li p{
+    text-align: left;
+    line-height: 20px;
+    font-size:13px;
+}
+
+    /* SOCIAL */
+
+section#social-bloc{
+    position:relative;
+    width:820px;
+    height:80px;
+    border-top:1px solid @grey;
+    line-height:110px;
+    bottom:0;
+    margin:auto;
+}
+
+section#social-bloc h2{
+    font-size:20px;
+    font-weight:600;
+    color:@darkGrey;
+    text-align: right;
+    padding-right:40px;
+    line-height: 110px;
+    width:48%;
+    float:left;
+    .border-box;
+}
+
+ul#social{
+    float:left;
+    width:33%;
+    margin-top:10px;
+}
+
+ul#social a{
+    opacity:0.8;
+    text-decoration: none;
+    
+    &:hover{
+        opacity:1;   
+    }
+}
+
+ul#social li{
+    display: inline-block;
+    margin-right:16px;
+}
+
+.icon-icon_mail35{
+    color:@red;
+}
+
+.icon-icon_fb35{
+    color:@fb;
+}
+
+.icon-icon_twitter35{
+    color:@twitter;
+}
+
+.icon-icon_soundcloud35{
+    color:@soundcloud;
+}
+
+    /* FOOTER */
+    
+footer{
+    width:100%;
+    height:45px;
+    background-color:#000;
+    color:#fff;
+}
+
+footer p{
+    font-size:12px;
+    font-weight: 600;
+    line-height:45px;
+    width:50%;
+    padding-left:45px;
+}
+
+footer section ul{
+    float:right;   
+    display: block;
+    height:44px;
+    margin-top:-45px;
+    margin-right:45px;
+}
+
+footer section ul li{
+    display: inline-block;
+    height:44px;
+    line-height:44px;
+    list-style:none;
+}
+
+footer section ul li a{
+    font-size:12px;
+    font-weight: 600;
+    color:@grey;
+    text-decoration:none;
+    
+    &:hover{
+        color:@white;
+    }
+}
+
+footer section > ul > li:last-child a{
+    padding:6px 10px;
+    background-color:@red;
+    color:@white;
+}
+
+footer section > ul > li:last-child:hover a{
+    background-color:@darkRed;
+    .transition;
+}
+
+    /* 404 PAGE */
+
+#wrapper404{
+    width:100%;
+    height:100%;
+    position:absolute;
+    text-align: center;
+    margin:auto;
+    line-height:36px;
+    background-color:@grey;
+    padding:8% 0;
+}
+
+#wrapper404 p{
+    font-family: 'Open Sans', sans-serif;
+    font-size:36px;
+    font-weight:700;
+    color:@lightBlack;
+    margin:15% 3%;
+}
+
+.back-button{
+    font-family: 'Open Sans', sans-serif;
+    font-size:20px;
+    font-weight:600;
+    color:@white;
+    background-color: @red;
+    margin-top:5%;
+    padding:10px 16px;
+    text-decoration: none;
+    position:relative;
+    top:50px;
+    .transition;
+
+    &:hover{
+        cursor:pointer;
+        background-color: @darkRed;
+        box-shadow:0 5px 0 0 @darkRed2;
+    }
+}
+
+    /* RESERVATION (PROVISOIRE) */
+
+#wrapper_reservation{
+    width:100%;
+    height:100%;
+    position:absolute;
+    text-align: center;
+    background-color:@grey;
+    margin:auto;
+}
+
+#title_resa{
+    font-size:36px;
+    font-weight:700;
+    color:@lightBlack;
+    margin-top:8%;
+    padding:0 3%;
+    line-height: 42px;
+}
+
+ul#contact-coords{
+    position:absolute;
+    width:100%;
+    height:300px;
+    text-align: center;
+    margin:auto;
+    margin-top:10%;
+}
+
+ul#contact-coords li{
+    width:100%;
+    height:auto;
+    text-align: center;
+}
+
+ul#contact-coords li:nth-of-type(2){
+    margin:50px 0;
+}
+
+ul#contact-coords li p{
+    font-size:15px;
+    font-weight:400;
+    line-height: 20px;
+    text-align: center;
+}
+
+
+    /* ------------ MEDIA QUERIES ------------ */
+
+
+@media screen and (max-width: 1080px) {
+      
+    /* HEADER */
+    
+        nav.responsive{
+           display: none;
+        }
+
+        .logo{
+            margin-left:45px;
+        }
+    
+        #hamburger{
+            display: block;
+            
+            &:hover{
+                cursor:pointer;   
+            }     
+        }
+    
+        .activeMenu{
+            display: block;
+            top:60px;
+            width:100%;
+        }
+     
+    
+        nav#menu{
+            margin-top:60px;
+        }   
+    
+        nav#menu > ul > li{
+            background-color:fade(@black, 90%);
+            border-left:2px solid fade(@black, 90%);
+            margin-top:0;
+            padding:0;
+            text-align:center;
+            line-height:60px;
+            display: block;
+            width:100%;
+            height:auto;
+
+            &:hover .submenu{
+                display: block;
+                width:100%;
+            }
+        }
+            
+        nav#menu > ul > li > ul{
+            margin:0;  
+        }
+
+        nav#menu > ul > li > ul > li{
+            width:100%;
+            height:auto;
+            background-color:fade(@black, 80%);
+            border-left:none;
+            margin-top:0;
+            padding:0;
+            background-color:none;
+            
+
+            &:after{
+                content:'';
+                display: block;
+                width:100%;
+                border-bottom:none;
+                margin-left:0;
+            }
+            &:last-child{
+                border-bottom: none;
+            }
+        }
+
+        nav#menu > ul > li:hover > .submenu{
+            position: static;
+        }
+
+        nav#menu > ul > li > ul.submenu > li > a{
+            color: @darkGrey;
+            height:auto;
+            width:100%;
+            padding:0;
+            background-color:none;
+
+            &:hover{
+                color:@white;
+            }
+        }
+    
+        nav#menu > ul > li > ul.submenu > li > a:hover {
+            color:@white;
+        }
+
+        div#lectmusic{
+            right:90px;
+        }
+
+        #bandeau{
+            background-image:url('../img/texture.png');
+            width:85%;
+            height:auto;
+            line-height: 30px;
+            padding:1% 2%;
+        }
+    
+    /* MAIN */
+
+        main{
+            position:relative;
+            width:85%;
+            height:auto;
+            padding:0;
+            padding-left:6%;
+            padding-right:6%;
+        }
+    
+        main > p:first-child{
+            text-align:center;
+            line-height:24px;
+            margin:auto;
+            padding-top:30px;
+        }
+
+        a#button-scroll{
+            left:48%;
+            position:relative;
+            top:35px;
+        }
+
+        article#links{
+            width:100%;
+            padding-bottom: 80px;
+        }
+
+        article#links > ul > li:first-child{
+            margin-top:-50px;
+        } 
+
+        article#links > ul > li{
+            width:100%;
+            margin-top:100px;
+            margin-right:0;
+        }   
+
+        article section{
+            width:75%;
+            height:auto;
+            margin:auto;
+            margin-bottom:38px;
+        }
+
+        li.infos{
+            margin-right:0;
+        }
+
+        li.infos:nth-of-type(2){
+            margin: 0;
+        }
+
+        /* ---------- ENSEMBLE VOCAL, LES SOLISTES, DIRECTION ARTISTIQUE ---------- */ 
+
+            main#presentation,
+            main#programme,
+            main#medias,
+            main#soutiens,
+            main#contact{
+                padding-top:10px;
+                padding-left:6%;
+                padding-right:6%;
+            }
+
+            main#presentation p:first-child{
+                padding:0;
+            }
+
+        /* ---------- PROGRAMME ---------- */
+
+        /* ---------- AGENDA ---------- */
+
+        /* ---------- AUDIO ---------- */
+
+        /* ---------- PHOTOS ---------- */
+
+        /* ---------- PRESSE ---------- */
+
+        /* ---------- PARTENAIRES ---------- */
+
+        /* ---------- MECENES ---------- */
+
+        /* ---------- CONTACT ---------- */
+    
+        main#contact > section:nth-of-type(2){
+            height:420px;
+        }
+
+        main#contact > section:nth-of-type(2) ul li{
+            clear:both;
+            margin-top:40px;
+            width:100%;
+        }
+
+        main#contact > section:nth-of-type(2) ul li:first-child{
+            margin-left:0;
+        }
+
+        main#contact > section:nth-of-type(2) ul li:nth-of-type(2){
+            margin-left:0;
+            margin-right:0;
+        }
+
+        main#contact > section:nth-of-type(2) ul li p{
+            text-align: center;
+        }
+
+    /* SOCIAL */
+
+        section#social-bloc{
+            position:relative;
+            width:100%;
+            height:170px;
+            border-top:1px solid @grey;
+        }
+
+        section#social-bloc h2{
+            padding-right:0;
+            text-align: center;
+            line-height:24px;
+            width:100%;
+            margin-top:32px;
+        }
+    
+        section#social-bloc ul{
+            width:100%;
+            text-align:center;
+        }   
+    
+        section#social-bloc ul li:last-child{
+            margin-right:0;
+        } 
+    
+    /* FOOTER */
+    
+        footer{
+            height:66px;
+            padding-top:8px;
+            .border-box;
+        }
+
+        footer p{
+            width:100%;
+            margin:0;
+            padding:0;
+            text-align:center;
+            line-height:12px;
+        }
+
+        footer section ul{
+            width:100%; 
+            display: block;
+            height:44px;
+            text-align:center;
+            margin:0;
+            line-height:12px;
+        }
+    
+}
+
+@media screen and (max-width: 680px) {
+
+    /* MAIN */
+    
+        a#button-scroll{
+            left:46%;   
+        }
+    
+        article#links{
+            margin-top:130px; 
+        }
+    
+        article#links section{
+            width:100%;   
+        }
+    
+        section#album img{
+            width:160px;
+            height:160px;
+        }
+
+        /* ---------- ENSEMBLE VOCAL, LES SOLISTES, DIRECTION ARTISTIQUE ---------- */
+
+            main#presentation > h2,
+            main#programme > h2,
+            main#medias > h2,
+            main#soutiens > h2,
+            main#contact > h2{
+                text-align: center;
+            }
+
+            section.presentation-content:nth-of-type(odd) img{
+                margin:auto;
+                width:100%;
+                height:auto;
+                padding-bottom: 30px;
+            }
+
+            section.presentation-content:nth-of-type(odd) section{
+                width:100%;
+                margin:0;
+                padding:0;
+            }
+
+            section.presentation-content:nth-of-type(even) img{ 
+                margin:auto;
+                width:100%;
+                height:auto;
+                padding-bottom: 30px;
+            }
+
+            section.presentation-content:nth-of-type(even) section{
+                width:100%;
+                margin:0;
+                padding:0;
+            }
+
+            section.presentation-content section p{
+                clear:both;
+            }
+
+            section.presentation-content+p{
+                clear:both;
+            }
+
+            section.presentation-content:nth-of-type(2),
+            section.presentation-content:nth-of-type(3){
+                padding-bottom:0;
+            }
+
+        /* ---------- PROGRAMME ---------- */
+
+        /* ---------- AGENDA ---------- */
+
+        /* ---------- AUDIO ---------- */
+
+        /* ---------- PHOTOS ---------- */
+
+        /* ---------- PRESSE ---------- */
+
+        /* ---------- PARTENAIRES ---------- */
+
+        /* ---------- MECENES ---------- */
+
+        /* ---------- CONTACT ---------- */
+    
+        section.contact-content{
+            height:auto;
+        }
+
+        section.contact-content section{
+            width:100%;
+            margin-bottom: 60px;
+            display: inline;
+        }
+
+        section.contact-content section:last-child{
+            clear:both;
+            margin-bottom:-30px;
+        }
+            
+        main#contact form{
+            height:auto;
+            width:100%;
+            margin-bottom:60px;
+            padding:50px;
+            background-color:@grey;
+            .border-box;
+        }
+
+        main#contact input[type=text]:nth-of-type(1),
+        main#contact input[type=text]:nth-of-type(2){
+            width:100%;
+        }
+
+        main#contact input[type=text]:nth-of-type(1){
+            margin-bottom:24px;
+        }
+
+        main#contact input[type=text]:nth-of-type(2){
+            clear:both;  
+        }
+
+        main#contact textarea{
+            margin-bottom:60px;
+        }
+}
+
+@media screen and (max-width: 420px){
+ 
+    /* MAIN */
+    
+        a#button-scroll{
+            left:43%;   
+        }
+    
+    /* FOOTER */
+    
+        footer{
+            height:125px;
+            padding-top:10px;
+            .border-box;
+        }
+    
+        footer section ul li:nth-of-type(4){
+            width:100%; 
+        }
+    
+}
+
+
+/////////////////////////////////////////////
+////////////// LECTEUR AUDIO ///////////////
+div.lectAudio{
+    width:330px;
+    background-color:transparent;
+    overflow: hidden;
+    position:absolute;
+    right:36px;
+}
+p.textaudio{
+    width:59%;
+    margin-right:5%;
+    border:1px solid transparent;
+    float:left;
+    text-align:right;
+    margin-top:6px;
+    font-size: 13px;
+}
+span#title{
+    color:white;
+    font-style:italic;
+    width:280px;
+}
+/* -------------
+    BUTTON AUDIO
+    ------------*/
+div#boutons{
+    float:right;
+    width:29%;
+    margin-right: 5%;
+    border: 2px solid transparent;
+}
+div#boutons span{
+    border:0;
+    float:right;
+    font-size: 25px;
+    opacity:0.8;
+    color:#CDCDCD;
+}
+div#boutons span:nth-child(2){
+    margin:0 5px;
+}
+div#boutons span:hover{
+    opacity:1;
+    cursor: pointer;
+}
+@media screen and (max-width: 680px){
+    /* HEADER */
+    
+        div.lectAudio{
+            display: none;   
+        }
+}
+////////////////////////////////////////////////////
